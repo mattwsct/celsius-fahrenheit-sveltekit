@@ -2,7 +2,7 @@
 	import { spring } from 'svelte/motion';
 
 	let count_celcius = 24;
-	let count_fahrenheit = 0;
+	let count_fahrenheit = 75;
 
 	const displayed_count_celcius = spring();
 	$: displayed_count_celcius.set(count_celcius);
@@ -38,12 +38,12 @@
 	}
 
 	function celcius_to_fahrenheit(celcius: number) {
-		count_fahrenheit = celcius * 1.8 + 32;
+		count_fahrenheit = Math.round(celcius * 1.8 + 32);
 		return count_fahrenheit;
 	}
 
 	function fahrenheit_to_celcius(fahrenheit: number) {
-		count_celcius = (fahrenheit - 32) / 1.8;
+		count_celcius = Math.round((fahrenheit - 32) / 1.8);
 		return count_celcius;
 	}
 
