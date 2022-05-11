@@ -2,49 +2,55 @@
 	let count_celsius = 24;
 	let count_fahrenheit = 75;
 
+	const min_celsius = -5573;
+	const max_celsius = 5538;
+	const min_fahrenheit = -10000;
+	const max_fahrenheit = 10000;
+
 	let increment_celsius = () => {
-		count_celsius++;
-		update_celsius();
+		if (count_celsius < max_celsius) {
+			count_celsius++;
+			update_celsius();
+		}
 	};
 
 	let decrement_celsius = () => {
-		count_celsius--;
-		update_celsius();
+		if (count_celsius > min_celsius) {
+			count_celsius--;
+			update_celsius();
+		}
 	};
 
 	let increment_fahrenheit = () => {
-		count_fahrenheit++;
-		update_fahrenheit();
+		if (count_fahrenheit < max_fahrenheit) {
+			count_fahrenheit++;
+			update_fahrenheit();
+		}
 	};
 
 	let decrement_fahrenheit = () => {
-		count_fahrenheit--;
-		update_fahrenheit();
-	};
-
-	let celsius_to_fahrenheit = () => {
-		count_fahrenheit = Math.round(count_celsius * 1.8 + 32);
-	};
-
-	let fahrenheit_to_celsius = () => {
-		count_celsius = Math.round((count_fahrenheit - 32) / 1.8);
+		if (count_fahrenheit > min_fahrenheit) {
+			count_fahrenheit--;
+			update_fahrenheit();
+		}
 	};
 
 	let update_celsius = () => {
-		if (count_celsius > 10000) {
-			count_celsius = 10000;
-		} else if (count_celsius < -10000) {
-			count_celsius = -10000;
+		if (count_celsius > max_celsius) {
+			count_celsius = max_celsius;
+		} else if (count_celsius < min_celsius) {
+			count_celsius = min_celsius;
 		}
-		celsius_to_fahrenheit();
+		count_fahrenheit = Math.round(count_celsius * 1.8 + 32);
 	};
+
 	let update_fahrenheit = () => {
-		if (count_fahrenheit > 10000) {
-			count_fahrenheit = 10000;
-		} else if (count_fahrenheit < -10000) {
-			count_fahrenheit = -10000;
+		if (count_fahrenheit > max_fahrenheit) {
+			count_fahrenheit = max_fahrenheit;
+		} else if (count_fahrenheit < min_fahrenheit) {
+			count_fahrenheit = min_fahrenheit;
 		}
-		fahrenheit_to_celsius();
+		count_celsius = Math.round((count_fahrenheit - 32) / 1.8);
 	};
 </script>
 
@@ -109,7 +115,7 @@
 	}
 
 	.temperature-input {
-		width: inherit;
+		width: 100%;
 		border: none;
 		background-color: transparent;
 		text-align: center;
