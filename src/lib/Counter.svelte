@@ -65,7 +65,7 @@
 </script>
 
 <div class="celsius">
-	<h1>Celsius</h1>
+	<h1>Celsius (ºC)</h1>
 	<div class="counter">
 		<button on:click={decrement_celsius} aria-label="Decrease the counter by one">
 			<svg aria-hidden="true" viewBox="0 0 1 1">
@@ -92,7 +92,7 @@
 </div>
 
 <div class="fahrenheit">
-	<h1>Fahrenheit</h1>
+	<h1>Fahrenheit (ºF)</h1>
 	<div class="counter">
 		<button on:click={decrement_fahrenheit} aria-label="Decrease the counter by one">
 			<svg aria-hidden="true" viewBox="0 0 1 1">
