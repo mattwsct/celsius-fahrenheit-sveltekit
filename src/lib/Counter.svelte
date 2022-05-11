@@ -1,37 +1,37 @@
 <script lang="ts">
-	let count_celsius = 24;
-	let count_fahrenheit = 75;
+	let count_celsius: number = 24;
+	let count_fahrenheit: number = 75.2;
 
-	const min_celsius = -5573;
-	const max_celsius = 5537;
+	const min_celsius = -573;
+	const max_celsius = 537;
 
-	const min_fahrenheit = -9999;
-	const max_fahrenheit = 9999;
+	const min_fahrenheit = -999;
+	const max_fahrenheit = 999;
 
 	let increment_celsius = () => {
 		if (count_celsius < max_celsius) {
-			count_celsius++;
+			count_celsius = Math.round(count_celsius + 1);
 			update_celsius();
 		}
 	};
 
 	let decrement_celsius = () => {
 		if (count_celsius > min_celsius) {
-			count_celsius--;
+			count_celsius = Math.round(count_celsius - 1);
 			update_celsius();
 		}
 	};
 
 	let increment_fahrenheit = () => {
 		if (count_fahrenheit < max_fahrenheit) {
-			count_fahrenheit++;
+			count_fahrenheit = Math.round(count_fahrenheit + 1);
 			update_fahrenheit();
 		}
 	};
 
 	let decrement_fahrenheit = () => {
 		if (count_fahrenheit > min_fahrenheit) {
-			count_fahrenheit--;
+			count_fahrenheit = Math.round(count_fahrenheit - 1);
 			update_fahrenheit();
 		}
 	};
@@ -41,8 +41,10 @@
 			count_celsius = max_celsius;
 		} else if (count_celsius < min_celsius) {
 			count_celsius = min_celsius;
-		}
-		count_fahrenheit = Math.round(count_celsius * 1.8 + 32);
+		} else if (!(count_celsius > min_celsius && count_celsius < max_celsius)) {
+			count_celsius = Math.round(count_celsius * 10) / 10;
+		} 
+		count_fahrenheit = Math.round((count_celsius * 1.8 + 32) * 10) / 10;
 	};
 
 	let update_fahrenheit = () => {
@@ -50,13 +52,15 @@
 			count_fahrenheit = max_fahrenheit;
 		} else if (count_fahrenheit < min_fahrenheit) {
 			count_fahrenheit = min_fahrenheit;
-		}
-		count_celsius = Math.round((count_fahrenheit - 32) / 1.8);
+		} else if (!(count_fahrenheit > min_fahrenheit && count_fahrenheit < max_fahrenheit)) {
+			count_fahrenheit = Math.round(count_fahrenheit * 10) / 10;
+		} 
+		count_celsius = Math.round(((count_fahrenheit - 32) / 1.8) * 10) / 10;
 	};
 
 	let round_numbers = () => {
-		count_celsius = Math.round(count_celsius);
-		count_fahrenheit = Math.round(count_fahrenheit);
+		count_celsius = Math.round(count_celsius * 10) / 10;
+		count_fahrenheit = Math.round(count_fahrenheit * 10) / 10;
 	};
 </script>
 
