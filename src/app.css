@@ -12,8 +12,9 @@
 	--secondary-color-dark: #303539;
 	--tertiary-color-dark: #535762;
 	--accent-color: #ff3e00;
+	--complementary-color: #00c1ff;
 	--heading-color: rgba(0, 0, 0, 0.7);
-	--heading-color-dark: rgba(255, 255, 255, 0.7);
+	--heading-color-dark: rgba(255, 255, 255, 0.9);
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
@@ -108,6 +109,20 @@ button {
 
 button:focus:not(:focus-visible) {
 	outline: none;
+}
+
+/* Remove arrows from text input */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
 }
 
 @media (min-width: 720px) {

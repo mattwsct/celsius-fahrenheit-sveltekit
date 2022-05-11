@@ -1,51 +1,51 @@
 <script lang="ts">
-	import { spring } from 'svelte/motion';
-
 	let count_celcius = 24;
 	let count_fahrenheit = 75;
 
-	const displayed_count_celcius = spring();
-	$: displayed_count_celcius.set(count_celcius);
-	$: offset_celcius = modulo($displayed_count_celcius, 1);
-
-	const displayed_count_fahrenheit = spring();
-	$: displayed_count_fahrenheit.set(count_fahrenheit);
-	$: offset_fahrenheit = modulo($displayed_count_fahrenheit, 1);
-
-	function modulo(n: number, m: number) {
-		// handle negative numbers
-		return ((n % m) + m) % m;
-	}
-
-	function increment_celcius() {
+	let increment_celcius = () => {
 		count_celcius++;
-		celcius_to_fahrenheit(count_celcius);
-	}
+		update_celcius();
+	};
 
-	function decrement_celcius() {
+	let decrement_celcius = () => {
 		count_celcius--;
-		celcius_to_fahrenheit(count_celcius);
-	}
+		update_celcius();
+	};
 
-	function increment_fahrenheit() {
+	let increment_fahrenheit = () => {
 		count_fahrenheit++;
-		fahrenheit_to_celcius(count_fahrenheit);
-	}
+		update_fahrenheit();
+	};
 
-	function decrement_fahrenheit() {
+	let decrement_fahrenheit = () => {
 		count_fahrenheit--;
-		fahrenheit_to_celcius(count_fahrenheit);
-	}
+		update_fahrenheit();
+	};
 
-	function celcius_to_fahrenheit(celcius: number) {
-		count_fahrenheit = Math.round(celcius * 1.8 + 32);
-		return count_fahrenheit;
-	}
+	let celcius_to_fahrenheit = () => {
+		count_fahrenheit = Math.round(count_celcius * 1.8 + 32);
+	};
 
-	function fahrenheit_to_celcius(fahrenheit: number) {
-		count_celcius = Math.round((fahrenheit - 32) / 1.8);
-		return count_celcius;
-	}
+	let fahrenheit_to_celcius = () => {
+		count_celcius = Math.round((count_fahrenheit - 32) / 1.8);
+	};
+
+	let update_celcius = () => {
+		if (count_celcius > 10000) {
+			count_celcius = 10000;
+		} else if (count_celcius < -10000) {
+			count_celcius = -10000;
+		}
+		celcius_to_fahrenheit();
+	};
+	let update_fahrenheit = () => {
+		if (count_fahrenheit > 10000) {
+			count_fahrenheit = 10000;
+		} else if (count_fahrenheit < -10000) {
+			count_fahrenheit = -10000;
+		}
+		fahrenheit_to_celcius();
+	};
 </script>
 
 <div class="celcius">
@@ -58,11 +58,12 @@
 		</button>
 
 		<div class="counter-viewport">
-			<div class="counter-digits" style="transform: translate(0, {100 * offset_celcius}%)">
-				<strong class="hidden" aria-hidden="true">{Math.floor($displayed_count_celcius + 1)}</strong
-				>
-				<strong>{Math.floor($displayed_count_celcius)}</strong>
-			</div>
+			<input
+				class="temperature-input"
+				type="number"
+				bind:value={count_celcius}
+				on:input={update_celcius}
+			/>
 		</div>
 
 		<button on:click={increment_celcius} aria-label="Increase the counter by one">
@@ -83,12 +84,12 @@
 		</button>
 
 		<div class="counter-viewport">
-			<div class="counter-digits" style="transform: translate(0, {100 * offset_fahrenheit}%)">
-				<strong class="hidden" aria-hidden="true"
-					>{Math.floor($displayed_count_fahrenheit + 1)}</strong
-				>
-				<strong>{Math.floor($displayed_count_fahrenheit)}</strong>
-			</div>
+			<input
+				class="temperature-input"
+				type="number"
+				bind:value={count_fahrenheit}
+				on:input={update_fahrenheit}
+			/>
 		</div>
 
 		<button on:click={increment_fahrenheit} aria-label="Increase the counter by one">
@@ -105,6 +106,20 @@
 		border-top: 1px solid rgba(0, 0, 0, 0.1);
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 		margin: 1rem 0;
+	}
+
+	.temperature-input {
+		width: inherit;
+		border: none;
+		background-color: transparent;
+		text-align: center;
+		color: var(--accent-color);
+		font-size: 4rem;
+		-webkit-appearance: none;
+		border: none;
+		background-color: transparent;
+		resize: none;
+		outline: none;
 	}
 
 	.counter button {
@@ -132,37 +147,14 @@
 	path {
 		vector-effect: non-scaling-stroke;
 		stroke-width: 2px;
-		stroke: var(--text-color);
+		stroke: var(--complementary-color);
 	}
 
 	.counter-viewport {
-		width: 8em;
-		height: 4em;
+		width: 14em;
+		min-height: 4em;
 		overflow: hidden;
 		text-align: center;
 		position: relative;
-	}
-
-	.counter-viewport strong {
-		position: absolute;
-		display: flex;
-		width: 100%;
-		height: 100%;
-		font-weight: 400;
-		color: var(--accent-color);
-		font-size: 4rem;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.counter-digits {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
-
-	.hidden {
-		top: -100%;
-		user-select: none;
 	}
 </style>
