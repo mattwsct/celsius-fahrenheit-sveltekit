@@ -16,10 +16,41 @@
 		// handle negative numbers
 		return ((n % m) + m) % m;
 	}
+
+	function increment_celcius() {
+		count_celcius++;
+		celcius_to_fahrenheit(count_celcius);
+	}
+
+	function decrement_celcius() {
+		count_celcius--;
+		celcius_to_fahrenheit(count_celcius);
+	}
+
+	function increment_fahrenheit() {
+		count_fahrenheit++;
+		fahrenheit_to_celcius(count_fahrenheit);
+	}
+
+	function decrement_fahrenheit() {
+		count_fahrenheit--;
+		fahrenheit_to_celcius(count_fahrenheit);
+	}
+
+	function celcius_to_fahrenheit(celcius: number) {
+		count_fahrenheit = celcius * 1.8 + 32;
+		return count_fahrenheit;
+	}
+
+	function fahrenheit_to_celcius(fahrenheit: number) {
+		count_celcius = (fahrenheit - 32) / 1.8;
+		return count_celcius;
+	}
+
 </script>
 
 <div class="counter celcius">
-	<button on:click={() => (count_celcius -= 1)} aria-label="Decrease the counter by one">
+	<button on:click={decrement_celcius} aria-label="Decrease the counter by one">
 		<svg aria-hidden="true" viewBox="0 0 1 1">
 			<path d="M0,0.5 L1,0.5" />
 		</svg>
@@ -32,7 +63,7 @@
 		</div>
 	</div>
 
-	<button on:click={() => (count_celcius += 1)} aria-label="Increase the counter by one">
+	<button on:click={increment_celcius} aria-label="Increase the counter by one">
 		<svg aria-hidden="true" viewBox="0 0 1 1">
 			<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
 		</svg>
@@ -40,7 +71,7 @@
 </div>
 
 <div class="counter fahrenheit">
-	<button on:click={() => (count_fahrenheit -= 1)} aria-label="Decrease the counter by one">
+	<button on:click={decrement_fahrenheit} aria-label="Decrease the counter by one">
 		<svg aria-hidden="true" viewBox="0 0 1 1">
 			<path d="M0,0.5 L1,0.5" />
 		</svg>
@@ -53,7 +84,7 @@
 		</div>
 	</div>
 
-	<button on:click={() => (count_fahrenheit += 1)} aria-label="Increase the counter by one">
+	<button on:click={increment_fahrenheit} aria-label="Increase the counter by one">
 		<svg aria-hidden="true" viewBox="0 0 1 1">
 			<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
 		</svg>
