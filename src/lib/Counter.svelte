@@ -49,47 +49,57 @@
 
 </script>
 
-<div class="counter celcius">
-	<button on:click={decrement_celcius} aria-label="Decrease the counter by one">
-		<svg aria-hidden="true" viewBox="0 0 1 1">
-			<path d="M0,0.5 L1,0.5" />
-		</svg>
-	</button>
-
-	<div class="counter-viewport">
-		<div class="counter-digits" style="transform: translate(0, {100 * offset_celcius}%)">
-			<strong class="hidden" aria-hidden="true">{Math.floor($displayed_count_celcius + 1)}</strong>
-			<strong>{Math.floor($displayed_count_celcius)}</strong>
+<div class="celcius">
+	<h1>Celcius</h1>
+	<div class="counter">
+		<button on:click={decrement_celcius} aria-label="Decrease the counter by one">
+			<svg aria-hidden="true" viewBox="0 0 1 1">
+				<path d="M0,0.5 L1,0.5" />
+			</svg>
+		</button>
+	
+		<div class="counter-viewport">
+			<div class="counter-digits" style="transform: translate(0, {100 * offset_celcius}%)">
+				<strong class="hidden" aria-hidden="true">{Math.floor($displayed_count_celcius + 1)}</strong>
+				<strong>{Math.floor($displayed_count_celcius)}</strong>
+			</div>
 		</div>
+	
+		<button on:click={increment_celcius} aria-label="Increase the counter by one">
+			<svg aria-hidden="true" viewBox="0 0 1 1">
+				<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
+			</svg>
+		</button>
 	</div>
-
-	<button on:click={increment_celcius} aria-label="Increase the counter by one">
-		<svg aria-hidden="true" viewBox="0 0 1 1">
-			<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
-		</svg>
-	</button>
 </div>
 
-<div class="counter fahrenheit">
-	<button on:click={decrement_fahrenheit} aria-label="Decrease the counter by one">
-		<svg aria-hidden="true" viewBox="0 0 1 1">
-			<path d="M0,0.5 L1,0.5" />
-		</svg>
-	</button>
 
-	<div class="counter-viewport">
-		<div class="counter-digits" style="transform: translate(0, {100 * offset_fahrenheit}%)">
-			<strong class="hidden" aria-hidden="true">{Math.floor($displayed_count_fahrenheit + 1)}</strong>
-			<strong>{Math.floor($displayed_count_fahrenheit)}</strong>
+
+<div class="fahrenheit">
+	<h1>Fahrenheit</h1>
+	<div class="counter">
+		<button on:click={decrement_fahrenheit} aria-label="Decrease the counter by one">
+			<svg aria-hidden="true" viewBox="0 0 1 1">
+				<path d="M0,0.5 L1,0.5" />
+			</svg>
+		</button>
+	
+		<div class="counter-viewport">
+			<div class="counter-digits" style="transform: translate(0, {100 * offset_fahrenheit}%)">
+				<strong class="hidden" aria-hidden="true">{Math.floor($displayed_count_fahrenheit + 1)}</strong>
+				<strong>{Math.floor($displayed_count_fahrenheit)}</strong>
+			</div>
 		</div>
+	
+		<button on:click={increment_fahrenheit} aria-label="Increase the counter by one">
+			<svg aria-hidden="true" viewBox="0 0 1 1">
+				<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
+			</svg>
+		</button>
 	</div>
-
-	<button on:click={increment_fahrenheit} aria-label="Increase the counter by one">
-		<svg aria-hidden="true" viewBox="0 0 1 1">
-			<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
-		</svg>
-	</button>
 </div>
+
+
 
 <style>
 	.counter {

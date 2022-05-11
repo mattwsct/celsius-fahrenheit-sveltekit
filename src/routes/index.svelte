@@ -19,13 +19,10 @@
 				<img src="svelte-welcome.png" alt="Welcome" />
 			</picture>
 		</div>
-
-		to your new<br />SvelteKit app
+		Celcius/fahrenheit converter made with SvelteKit
 	</h1>
 
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
+	<h2>Try incrementing or decrementing the below values to see the results change.</h2>
 
 	<Counter />
 </section>
