@@ -13,12 +13,6 @@
 
 <section>
 	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
 		Celcius/fahrenheit converter made with SvelteKit
 	</h1>
 
@@ -34,6 +28,7 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1;
+		margin: var(--column-margin-top) auto 0 auto;
 	}
 
 	h1 {

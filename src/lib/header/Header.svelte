@@ -27,7 +27,7 @@
 	</nav>
 
 	<div class="corner">
-		<DarkMode/>	
+		<DarkMode />
 	</div>
 </header>
 
@@ -114,6 +114,26 @@
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;
+	}
+
+	:global(body) {
+		background-color: var(--primary-color);
+		background: linear-gradient(
+			180deg,
+			var(--primary-color) 0%,
+			var(--secondary-color) 10.45%,
+			var(--tertiary-color) 41.35%
+		);
+		transition: background-color 0.3s;
+	}
+	:global(body.dark-mode) {
+		background-color: var(--secondary-color);
+		background: linear-gradient(
+			180deg,
+			var(--primary-color-dark) 0%,
+			var(--secondary-color-dark) 10.45%,
+			var(--tertiary-color-dark) 41.35%
+		);
 	}
 
 	a:hover {

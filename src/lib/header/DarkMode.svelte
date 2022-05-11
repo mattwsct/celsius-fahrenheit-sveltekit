@@ -12,7 +12,7 @@
 
 <style>
 	button {
-		background-color: var(--accent-color);
+		background-color: var(--secondary-color-dark);
 		color: white;
 		border: none;
 		border-radius: 4px;
@@ -22,6 +22,11 @@
         width: 2em;
         height: 2em;
         line-height: 0;
+	}
+
+    :global(body.dark-mode) button {
+		background-color: transparent;
+		color: white;
 	}
     
     .dark-mode-button .moon {
