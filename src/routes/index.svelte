@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Celcius/fahrenheit converter</title>
+	<meta name="description" content="Celcius/fahrenheit converter made in SvelteKit" />
 </svelte:head>
 
 <section>
