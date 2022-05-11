@@ -23,7 +23,7 @@
 	<h1>About this app</h1>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app that converts celcius and fahrenheit.
+		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app that converts celsius and fahrenheit.
 	</p>
 	<p>
 		Initially I had intented to create the app with vanilla JavaScript, but I'd been interested in

@@ -1,15 +1,15 @@
 <script lang="ts">
-	let count_celcius = 24;
+	let count_celsius = 24;
 	let count_fahrenheit = 75;
 
-	let increment_celcius = () => {
-		count_celcius++;
-		update_celcius();
+	let increment_celsius = () => {
+		count_celsius++;
+		update_celsius();
 	};
 
-	let decrement_celcius = () => {
-		count_celcius--;
-		update_celcius();
+	let decrement_celsius = () => {
+		count_celsius--;
+		update_celsius();
 	};
 
 	let increment_fahrenheit = () => {
@@ -22,21 +22,21 @@
 		update_fahrenheit();
 	};
 
-	let celcius_to_fahrenheit = () => {
-		count_fahrenheit = Math.round(count_celcius * 1.8 + 32);
+	let celsius_to_fahrenheit = () => {
+		count_fahrenheit = Math.round(count_celsius * 1.8 + 32);
 	};
 
-	let fahrenheit_to_celcius = () => {
-		count_celcius = Math.round((count_fahrenheit - 32) / 1.8);
+	let fahrenheit_to_celsius = () => {
+		count_celsius = Math.round((count_fahrenheit - 32) / 1.8);
 	};
 
-	let update_celcius = () => {
-		if (count_celcius > 10000) {
-			count_celcius = 10000;
-		} else if (count_celcius < -10000) {
-			count_celcius = -10000;
+	let update_celsius = () => {
+		if (count_celsius > 10000) {
+			count_celsius = 10000;
+		} else if (count_celsius < -10000) {
+			count_celsius = -10000;
 		}
-		celcius_to_fahrenheit();
+		celsius_to_fahrenheit();
 	};
 	let update_fahrenheit = () => {
 		if (count_fahrenheit > 10000) {
@@ -44,14 +44,14 @@
 		} else if (count_fahrenheit < -10000) {
 			count_fahrenheit = -10000;
 		}
-		fahrenheit_to_celcius();
+		fahrenheit_to_celsius();
 	};
 </script>
 
-<div class="celcius">
-	<h1>Celcius</h1>
+<div class="celsius">
+	<h1>Celsius</h1>
 	<div class="counter">
-		<button on:click={decrement_celcius} aria-label="Decrease the counter by one">
+		<button on:click={decrement_celsius} aria-label="Decrease the counter by one">
 			<svg aria-hidden="true" viewBox="0 0 1 1">
 				<path d="M0,0.5 L1,0.5" />
 			</svg>
@@ -61,12 +61,12 @@
 			<input
 				class="temperature-input"
 				type="number"
-				bind:value={count_celcius}
-				on:input={update_celcius}
+				bind:value={count_celsius}
+				on:input={update_celsius}
 			/>
 		</div>
 
-		<button on:click={increment_celcius} aria-label="Increase the counter by one">
+		<button on:click={increment_celsius} aria-label="Increase the counter by one">
 			<svg aria-hidden="true" viewBox="0 0 1 1">
 				<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
 			</svg>

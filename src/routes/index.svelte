@@ -7,12 +7,12 @@
 </script>
 
 <svelte:head>
-	<title>Celcius/fahrenheit converter</title>
-	<meta name="description" content="Celcius/fahrenheit converter made in SvelteKit" />
+	<title>Celsius/fahrenheit converter</title>
+	<meta name="description" content="Celsius/fahrenheit converter made in SvelteKit" />
 </svelte:head>
 
 <section>
-	<h1>Celcius/fahrenheit converter made with SvelteKit</h1>
+	<h1>Celsius/fahrenheit converter made with SvelteKit</h1>
 
 	<h2>Try incrementing or decrementing the below values to see the results change.</h2>
 
