@@ -29,7 +29,10 @@
 		Initially I had intented to create the app with vanilla JavaScript, but I'd been interested in
 		Svelte and SvelteKit for some time and wanted to try it out.
 	</p>
-	<p>I love how lightweight Svelte is, how it compiles down to pure JavaScript without all the bulk of a virtual DOM.</p>
+	<p>
+		I love how lightweight Svelte is, how it compiles down to pure JavaScript without all the bulk
+		of a virtual DOM.
+	</p>
 </div>
 
 <style>

@@ -6,8 +6,8 @@
 
 <button on:click={toggle} class="dark-mode-button">
 	<slot />
-    <div class="moon">🌛</div>
-    <div class="sun">☀️</div>
+	<div class="moon">🌛</div>
+	<div class="sun">☀️</div>
 </button>
 
 <style>
@@ -18,28 +18,28 @@
 		border-radius: 4px;
 		padding: 0.5rem;
 		text-transform: uppercase;
-        margin-top: 10px;
-        width: 2em;
-        height: 2em;
-        line-height: 0;
+		margin-top: 10px;
+		width: 2em;
+		height: 2em;
+		line-height: 0;
 	}
 
-    :global(body.dark-mode) button {
+	:global(body.dark-mode) button {
 		background-color: transparent;
 		color: white;
 	}
-    
-    .dark-mode-button .moon {
-        display: block;
-    }
-    .dark-mode-button .sun {
-        display: none;
-    }
 
-    :global(body.dark-mode) .dark-mode-button .moon {
-        display: none;
-    }
-    :global(body.dark-mode) .dark-mode-button .sun {
-        display: block;
-    }
+	.dark-mode-button .moon {
+		display: block;
+	}
+	.dark-mode-button .sun {
+		display: none;
+	}
+
+	:global(body.dark-mode) .dark-mode-button .moon {
+		display: none;
+	}
+	:global(body.dark-mode) .dark-mode-button .sun {
+		display: block;
+	}
 </style>
