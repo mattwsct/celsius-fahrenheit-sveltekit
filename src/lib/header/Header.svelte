@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import logo from './svelte-logo.svg';
+	import DarkMode from './DarkMode.svelte';
 </script>
 
 <header>
@@ -26,7 +27,7 @@
 	</nav>
 
 	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+		<DarkMode/>	
 	</div>
 </header>
 
