@@ -116,16 +116,12 @@
 
 	.temperature-input {
 		width: 100%;
-		border: none;
-		background-color: transparent;
+		position: inherit;
 		text-align: center;
 		color: var(--accent-color);
 		font-size: 4rem;
-		-webkit-appearance: none;
 		border: none;
 		background-color: transparent;
-		resize: none;
-		outline: none;
 	}
 
 	.counter button {
@@ -160,7 +156,5 @@
 		width: 14em;
 		min-height: 4em;
 		overflow: hidden;
-		text-align: center;
-		position: relative;
 	}
 </style>
