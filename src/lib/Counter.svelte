@@ -115,13 +115,14 @@
 	}
 
 	.temperature-input {
-		width: 100%;
+		width: 200px;
 		position: inherit;
 		text-align: center;
 		color: var(--accent-color);
 		font-size: 4rem;
 		border: none;
 		background-color: transparent;
+		outline: none;
 	}
 
 	.counter button {
@@ -153,7 +154,6 @@
 	}
 
 	.counter-viewport {
-		width: 14em;
 		min-height: 4em;
 		overflow: hidden;
 	}
