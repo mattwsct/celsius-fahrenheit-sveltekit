@@ -3,9 +3,10 @@
 	let count_fahrenheit = 75;
 
 	const min_celsius = -5573;
-	const max_celsius = 5538;
-	const min_fahrenheit = -10000;
-	const max_fahrenheit = 10000;
+	const max_celsius = 5537;
+
+	const min_fahrenheit = -9999;
+	const max_fahrenheit = 9999;
 
 	let increment_celsius = () => {
 		if (count_celsius < max_celsius) {
@@ -52,6 +53,11 @@
 		}
 		count_celsius = Math.round((count_fahrenheit - 32) / 1.8);
 	};
+
+	let round_numbers = () => {
+		count_celsius = Math.round(count_celsius);
+		count_fahrenheit = Math.round(count_fahrenheit);
+	};
 </script>
 
 <div class="celsius">
@@ -69,6 +75,7 @@
 				type="number"
 				bind:value={count_celsius}
 				on:input={update_celsius}
+				on:change={round_numbers}
 			/>
 		</div>
 
@@ -95,6 +102,7 @@
 				type="number"
 				bind:value={count_fahrenheit}
 				on:input={update_fahrenheit}
+				on:change={round_numbers}
 			/>
 		</div>
 
