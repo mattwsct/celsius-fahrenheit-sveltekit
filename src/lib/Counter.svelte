@@ -123,6 +123,7 @@
 		border: none;
 		background-color: transparent;
 		outline: none;
+		-moz-appearance: textfield;
 	}
 
 	.counter button {
