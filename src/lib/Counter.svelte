@@ -131,7 +131,7 @@
 	}
 
 	.temperature-input {
-		width: 200px;
+		width: 60%;
 		position: inherit;
 		text-align: center;
 		color: var(--accent-color);
@@ -172,7 +172,6 @@
 
 	@media (max-width: 720px) {
 		.temperature-input {
-			width: 60%;
 			font-size: 3rem;
 		}
 	}
