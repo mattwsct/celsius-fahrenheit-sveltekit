@@ -42,7 +42,7 @@ In the end the functionality was as follows:
 - Users are able to enter many decimals into the counters, but once they press enter or tap/click outside the input, it will be rounded to one decimal place.
 - Entering any value above or below the maximum/minimum will change the value to the maximum/minimum.
 
-## UI Design
+## UI design
 
 As mentioned, I wanted to keep the design as clean and simple as possible, I removed as much of the text and titles as I could and left the essentials. Initially I had created a two-page site with an about page. But after reviewing the task I realised it needed to be a single page app, so I added the about text into the home page, under the counters. Perhaps it's not necessary, but the page looked a little too empty without it.
 
