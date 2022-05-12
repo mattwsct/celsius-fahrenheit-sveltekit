@@ -135,7 +135,7 @@
 		position: inherit;
 		text-align: center;
 		color: var(--accent-color);
-		font-size: 4rem;
+		font-size: 3rem;
 		border: none;
 		background-color: transparent;
 		outline: none;
@@ -168,11 +168,5 @@
 		vector-effect: non-scaling-stroke;
 		stroke-width: 2px;
 		stroke: var(--complementary-color);
-	}
-
-	@media (max-width: 720px) {
-		.temperature-input {
-			font-size: 3rem;
-		}
 	}
 </style>
