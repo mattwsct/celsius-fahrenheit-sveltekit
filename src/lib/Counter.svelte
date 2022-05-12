@@ -174,7 +174,7 @@
 			width: 290px;
 		}
 		.temperature-input {
-			width: 175px;
+			width: 150px;
 			font-size: 3rem;
 		}
 	}
