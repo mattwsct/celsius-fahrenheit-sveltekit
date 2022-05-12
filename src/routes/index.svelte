@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Celsius/fahrenheit converter</title>
+	<title>Temperature Conversion</title>
 	<meta name="description" content="Celsius/fahrenheit converter made in SvelteKit" />
 </svelte:head>
 
