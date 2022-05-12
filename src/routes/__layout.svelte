@@ -10,7 +10,7 @@
 </main>
 
 <footer>
-	<p>Made with ❤️ by <a href="https://mattwestcott.com/">Matt W</a></p>
+	<p>Made with ❤️ by <a href="https://mattwestcott.com/" target="_blank">Matt W</a></p>
 </footer>
 
 <style>
