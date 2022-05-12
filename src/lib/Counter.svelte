@@ -60,9 +60,10 @@
 	};
 </script>
 
+<h1>Temperature Conversion</h1>
 <div class="counter-container">
 	<div class="celsius">
-		<h1>Celsius (ºC)</h1>
+		<h2>Celsius (ºC)</h2>
 		<div class="counter">
 			<button on:click={decrement_celsius} aria-label="Decrease the counter by one">
 				<svg aria-hidden="true" viewBox="0 0 1 1">
@@ -86,7 +87,7 @@
 	</div>
 
 	<div class="fahrenheit">
-		<h1>Fahrenheit (ºF)</h1>
+		<h2>Fahrenheit (ºF)</h2>
 		<div class="counter">
 			<button on:click={decrement_fahrenheit} aria-label="Decrease the counter by one">
 				<svg aria-hidden="true" viewBox="0 0 1 1">
@@ -109,6 +110,21 @@
 		</div>
 	</div>
 </div>
+<div class="about">
+	<h2>About this app</h2>
+
+	<p>
+		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app that converts celsius and fahrenheit.
+	</p>
+	<p>
+		Initially I had intented to create the app with vanilla JavaScript, but I'd been interested in
+		Svelte and SvelteKit for some time and wanted to try it out.
+	</p>
+	<p>
+		I love how lightweight Svelte is, how it compiles down to pure JavaScript without all the bulk
+		of a virtual DOM.
+	</p>
+</div>
 
 <style>
 	.counter-container {
@@ -121,6 +137,15 @@
 		background: #ffffff33;
 		border-radius: 10px;
 		margin: 10px 10px;
+		min-height: 170px;
+	}
+	.about {
+		margin: 50px auto 0 auto;
+		max-width: 720px;
+	}
+	h2 {
+		font-size: 2rem;
+		text-align: center;
 	}
 	.counter {
 		display: flex;
