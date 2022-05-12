@@ -117,7 +117,7 @@
 		justify-content: center;
 	}
 	.counter-container > div {
-		width: 290px;
+		max-width: 320px;
 		background: #ffffff33;
 		border-radius: 10px;
 		margin: 10px 10px;
@@ -127,6 +127,7 @@
 		border-top: 1px solid rgba(0, 0, 0, 0.1);
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 		margin: 1rem auto;
+		justify-content: center;
 	}
 
 	.temperature-input {
@@ -170,9 +171,6 @@
 	}
 
 	@media (max-width: 720px) {
-		.counter-container > div {
-			width: 290px;
-		}
 		.temperature-input {
 			width: 150px;
 			font-size: 3rem;
