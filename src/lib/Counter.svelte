@@ -118,7 +118,7 @@
 		margin: auto 10px;
 	}
 	.counter-container > div {
-		width: auto;
+		width: 330px;
 		background: #ffffff33;
 		border-radius: 10px;
 		margin: 10px 10px;
