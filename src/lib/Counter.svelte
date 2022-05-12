@@ -115,6 +115,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		margin: auto 10px;
 	}
 	.counter-container > div {
 		width: auto;
