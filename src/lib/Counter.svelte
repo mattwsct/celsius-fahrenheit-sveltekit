@@ -117,7 +117,7 @@
 		justify-content: center;
 	}
 	.counter-container > div {
-		width: 300px;
+		min-width: 300px;
 		background: #ffffff33;
 		border-radius: 10px;
 		margin: 10px 10px;
@@ -126,11 +126,11 @@
 		display: flex;
 		border-top: 1px solid rgba(0, 0, 0, 0.1);
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-		margin: 1rem 0;
+		margin: 1rem auto;
 	}
 
 	.temperature-input {
-		width: 190px;
+		width: 175px;
 		position: inherit;
 		text-align: center;
 		color: var(--accent-color);
