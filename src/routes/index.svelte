@@ -12,10 +12,6 @@
 </svelte:head>
 
 <section>
-	<h1>Celsius/fahrenheit converter made with SvelteKit</h1>
-
-	<h2>Try incrementing or decrementing the below values to see the results change.</h2>
-
 	<Counter />
 </section>
 
@@ -27,9 +23,5 @@
 		align-items: center;
 		flex: 1;
 		margin: var(--column-margin-top) auto 0 auto;
-	}
-
-	h1 {
-		width: 100%;
 	}
 </style>

@@ -41,8 +41,6 @@
 			count_celsius = max_celsius;
 		} else if (count_celsius < min_celsius) {
 			count_celsius = min_celsius;
-		} else if (!(count_celsius > min_celsius && count_celsius < max_celsius)) {
-			count_celsius = Math.round(count_celsius * 10) / 10;
 		}
 		count_fahrenheit = Math.round((count_celsius * 1.8 + 32) * 10) / 10;
 	};
@@ -52,8 +50,6 @@
 			count_fahrenheit = max_fahrenheit;
 		} else if (count_fahrenheit < min_fahrenheit) {
 			count_fahrenheit = min_fahrenheit;
-		} else if (!(count_fahrenheit > min_fahrenheit && count_fahrenheit < max_fahrenheit)) {
-			count_fahrenheit = Math.round(count_fahrenheit * 10) / 10;
 		}
 		count_celsius = Math.round(((count_fahrenheit - 32) / 1.8) * 10) / 10;
 	};
@@ -64,16 +60,15 @@
 	};
 </script>
 
-<div class="celsius">
-	<h1>Celsius (ºC)</h1>
-	<div class="counter">
-		<button on:click={decrement_celsius} aria-label="Decrease the counter by one">
-			<svg aria-hidden="true" viewBox="0 0 1 1">
-				<path d="M0,0.5 L1,0.5" />
-			</svg>
-		</button>
-
-		<div class="counter-viewport">
+<div class="counter-container">
+	<div class="celsius">
+		<h1>Celsius (ºC)</h1>
+		<div class="counter">
+			<button on:click={decrement_celsius} aria-label="Decrease the counter by one">
+				<svg aria-hidden="true" viewBox="0 0 1 1">
+					<path d="M0,0.5 L1,0.5" />
+				</svg>
+			</button>
 			<input
 				class="temperature-input"
 				type="number"
@@ -81,26 +76,23 @@
 				on:input={update_celsius}
 				on:change={round_numbers}
 			/>
+
+			<button on:click={increment_celsius} aria-label="Increase the counter by one">
+				<svg aria-hidden="true" viewBox="0 0 1 1">
+					<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
+				</svg>
+			</button>
 		</div>
-
-		<button on:click={increment_celsius} aria-label="Increase the counter by one">
-			<svg aria-hidden="true" viewBox="0 0 1 1">
-				<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
-			</svg>
-		</button>
 	</div>
-</div>
 
-<div class="fahrenheit">
-	<h1>Fahrenheit (ºF)</h1>
-	<div class="counter">
-		<button on:click={decrement_fahrenheit} aria-label="Decrease the counter by one">
-			<svg aria-hidden="true" viewBox="0 0 1 1">
-				<path d="M0,0.5 L1,0.5" />
-			</svg>
-		</button>
-
-		<div class="counter-viewport">
+	<div class="fahrenheit">
+		<h1>Fahrenheit (ºF)</h1>
+		<div class="counter">
+			<button on:click={decrement_fahrenheit} aria-label="Decrease the counter by one">
+				<svg aria-hidden="true" viewBox="0 0 1 1">
+					<path d="M0,0.5 L1,0.5" />
+				</svg>
+			</button>
 			<input
 				class="temperature-input"
 				type="number"
@@ -108,17 +100,27 @@
 				on:input={update_fahrenheit}
 				on:change={round_numbers}
 			/>
-		</div>
 
-		<button on:click={increment_fahrenheit} aria-label="Increase the counter by one">
-			<svg aria-hidden="true" viewBox="0 0 1 1">
-				<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
-			</svg>
-		</button>
+			<button on:click={increment_fahrenheit} aria-label="Increase the counter by one">
+				<svg aria-hidden="true" viewBox="0 0 1 1">
+					<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
+				</svg>
+			</button>
+		</div>
 	</div>
 </div>
 
 <style>
+	.counter-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.counter-container > div {
+		width: auto;
+		background: #ffffff33;
+		border-radius: 10px;
+		margin: 10px 10px;
+	}
 	.counter {
 		display: flex;
 		border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -127,7 +129,7 @@
 	}
 
 	.temperature-input {
-		width: 200px;
+		width: 190px;
 		position: inherit;
 		text-align: center;
 		color: var(--accent-color);
@@ -164,10 +166,5 @@
 		vector-effect: non-scaling-stroke;
 		stroke-width: 2px;
 		stroke: var(--complementary-color);
-	}
-
-	.counter-viewport {
-		min-height: 4em;
-		overflow: hidden;
 	}
 </style>
