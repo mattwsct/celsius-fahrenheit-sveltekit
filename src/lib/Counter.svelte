@@ -114,6 +114,7 @@
 	.counter-container {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 	.counter-container > div {
 		width: auto;
