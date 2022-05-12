@@ -172,7 +172,7 @@
 
 	@media (max-width: 720px) {
 		.temperature-input {
-			width: 150px;
+			width: 60%;
 			font-size: 3rem;
 		}
 	}
